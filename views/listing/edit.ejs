@@ -1,0 +1,137 @@
+<% layout("/layouts/boilerplate.ejs") -%>
+
+    <body>
+        <div class="row">
+            <div class="col-8 offset-2">
+                <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" id="listingForm"
+                    class="new-form needs-validation" novalidate enctype="multipart/form-data">
+                    <br><br>
+                    <h2>Edit the listing</h2>
+                    <div class="mb-4">
+                        <label for="title" class="form-label"> <i class="fa-solid fa-tag" style="color: #fe424d;"></i> Title</label>
+                        <input id="title" name="listing[title]" type="text" class="form-control"
+                            value="<%= listing.title %>" required>
+                        <div class="valid-feedback">
+                            Nice title!! 😊
+                        </div>
+                        <div class="invalid-feedback">
+                            Title must be at least 5 character long ❌
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="description" class="form-label"> <i class="fa-solid fa-file-lines" style="color: #fe424d;"></i> Description</label>
+                        <textarea rows="4" id="description" name="listing[description]" type="text" class="form-control"
+                            required><%= listing.description %></textarea>
+                        <div class="valid-feedback">
+                            Nice description..&#128512;&#128512;
+                        </div>
+                        <div class="invalid-feedback">
+                            Do not leave description empty...⚠️⚠️;
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="image-description" class="form-label"> <i class="fa-solid fa-image" style="color: #fe424d;"></i> Image-Description</label>
+                        <input id="image-description" name="listing[image][filename]"
+                            value="<%= listing.image.filename %> " type="text" class="form-control">
+                    </div>
+                   <div class="mb-4">
+                        <label for="image-url" class="form-label"><i class="fa-solid fa-image" style="color:#fe424d"></i>Upload Listing Image </label>
+                        <input id="image-url" name="listing[image][url]" type="file"
+                            class="form-control">
+                    </div>
+                    <div class="row">
+                        <div class="mb-4 col-md-4">
+                            <label for="price" class="form-label"> <i class="fa-solid fa-indian-rupee-sign" style="color: #fe424d;"></i> Price</label>
+                            <input name="listing[price]" value="<%= listing.price %>" id="price" type="number"
+                                class="form-control" required>
+                            <div class="valid-feedback">
+                                Perfect price! 💸
+                            </div>
+                            <div class="invalid-feedback">
+                                Price must be at least ₹1000 🚫
+                            </div>
+                        </div>
+                        <div class="mb-4 col-md-8">
+                            <label for="country" class="form-label"> <i class="fa-solid fa-earth-americas" style="color: #fe424d;"></i> Country</label>
+                            <input list="countryList" id="country" name="listing[country]"
+                                value="<%= listing.country %>" type="text" class="form-control" required>
+                            <datalist id="countryList">
+                                <option value="India">
+                                <option value="United States">
+                                <option value="United Kingdom">
+                                <option value="Canada">
+                                <option value="Australia">
+                                <option value="Germany">
+                                <option value="France">
+                                <option value="Italy">
+                                <option value="Spain">
+                                <option value="Brazil">
+                                <option value="Mexico">
+                                <option value="Russia">
+                                <option value="China">
+                                <option value="Japan">
+                                <option value="South Korea">
+                                <option value="Singapore">
+                                <option value="Indonesia">
+                                <option value="Thailand">
+                                <option value="Vietnam">
+                                <option value="Malaysia">
+                                <option value="United Arab Emirates">
+                                <option value="Saudi Arabia">
+                                <option value="South Africa">
+                                <option value="Egypt">
+                                <option value="Turkey">
+                                <option value="Argentina">
+                                <option value="Chile">
+                                <option value="Colombia">
+                                <option value="New Zealand">
+                                <option value="Netherlands">
+                                <option value="Belgium">
+                                <option value="Sweden">
+                                <option value="Norway">
+                                <option value="Denmark">
+                                <option value="Finland">
+                                <option value="Switzerland">
+                                <option value="Poland">
+                                <option value="Portugal">
+                                <option value="Greece">
+                                <option value="Ukraine">
+                                <option value="Ireland">
+                                <option value="Israel">
+                                <option value="Pakistan">
+                                <option value="Bangladesh">
+                                <option value="Nepal">
+                                <option value="Sri Lanka">
+                                <option value="Philippines">
+                                <option value="Nigeria">
+                                <option value="Kenya">
+                            </datalist>
+                            <div class="valid-feedback">
+                                🌍 That's a wonderful place!
+                            </div>
+                            <div class="invalid-feedback">
+                                Do not leave country empty...⚠️⚠️;
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="location" class="form-label"> <i class="fa-solid fa-location-dot" style="color: #fe424d;"></i> Location</label>
+                        <input id="location" name="listing[location]" value="<%= listing.location %>" type="text"
+                            class="form-control" required>
+                             <div class="valid-feedback">
+                                📌 Looks like a great spot!
+                            </div>
+                            <div class="invalid-feedback">
+                                Do not leave location empty...⚠️⚠️;
+                            </div>
+                    </div>
+
+                    <div class="mb-5">
+                        <button type="submit" class="btn btn-dark add-btn"><i class="fa-solid fa-pencil"></i>   Update listing</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </body>

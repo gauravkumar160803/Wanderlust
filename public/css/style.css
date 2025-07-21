@@ -1,0 +1,233 @@
+body {
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+}
+
+.navbar {
+    height: 5rem;
+    background-color: white;
+}
+
+.fa-regular {
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link {
+    color: #222222 !important;
+}
+
+.f-info-links a {
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+.f-info {
+    text-align: center;
+    display: flex;
+    height: 8rem;
+    background-color: #ebebeb;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+.f-info-links,
+.f-info-socials,
+.copyright {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.f-info-socials i {
+    margin-right: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.terms {
+    margin-left: 1.7rem;
+}
+
+.listing-card {
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-img-overlay {
+    opacity: 0;
+}
+
+.card-img-overlay:hover {
+    opacity: 0.3;
+    background-color: white;
+}
+
+.new-form {
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+.add-btn,
+.edit-btn1,
+.signup-btn,
+.login-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+.edit-btn1:hover {
+    opacity: 0.8;
+}
+
+.add-btn:hover {
+    opacity: 0.8;
+}
+
+.signup-btn:hover {
+    opacity: 0.8;
+}
+
+.login-btn:hover {
+    opacity: 0.8;
+}
+
+.show-img {
+    height: 50vh;
+}
+
+.btns {
+    display: flex;
+}
+
+.edit-btn2 {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+.edit-btn2:hover {
+    opacity: 0.8;
+}
+
+/* Use to show the validation(eg:for price/title) msg according to JS logic which add the class in the input field.. */
+
+.valid-feedback,
+.invalid-feedback {
+    display: none !important;
+}
+
+.is-valid~.valid-feedback {
+    display: block !important;
+}
+
+.is-invalid~.invalid-feedback {
+    display: block !important;
+}
+
+/* for the input rating via stars(for review input) */
+
+.star-input {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+}
+
+.star {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #ccc;
+    margin-bottom: 0.5rem;
+    transition: color 0.2s ease, transform 0.4s ease;
+}
+
+.star.selected,
+.star.hovered {
+    transform: scale(1.3);
+    color: #ffc107;
+}
+
+/* for review block(for display review)*/
+
+.review-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bottom-content {
+    margin-top: auto;
+}
+
+.star-show {
+    font-size: 0.8rem;
+    color: #ccc;
+}
+
+.star-filled {
+    font-size: 0.8rem;
+    color: #ffc107;
+}
+
+/* map */
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+.mapbox-marker-custom {
+    background-color: black !important;
+    color: white !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50%;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+
+.mapboxgl-popup-content {
+    font-family: 'Segoe UI', sans-serif !important;
+    background-color: #fff !important;
+    color: #222 !important;
+    border-radius: 10px !important;
+    padding: 15px !important;
+    min-width: 150px;
+    max-width: 250px !important;
+   box-shadow: 0 10px 30px black !important;
+}
+
+.mapboxgl-popup-tip {
+    border-top-color: #fe424d !important;
+}
+
+
+.mapboxgl-popup-content h3 {
+    margin: 0 0 8px 0 !important;
+    font-size: 18px !important;
+    color: #fe424d !important;
+}
+
+
+.mapboxgl-popup-content p {
+    margin: 0 !important;
+    font-size: 14px !important;
+}
