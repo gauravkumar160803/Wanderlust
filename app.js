@@ -14,6 +14,7 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
+const PORT = process.env.PORT || 8080;
 
 
 //Importing the routes...
@@ -42,8 +43,8 @@ main().then(() => {
 async function main() {
     await mongoose.connect(dbURL);
 }
-app.listen(8080, () => {
-    console.log("Server is working");
+app.listen(PORT, () => {
+    console.log(`Server is working on port ${PORT}`);
 });
 
 const store = MongoStore.create({
