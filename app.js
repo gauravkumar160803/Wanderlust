@@ -90,6 +90,10 @@ app.use((req, res, next) => {
     next();
 });
 
+//home route redirrecting to listings page
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
 
 // Listings routes
 app.use("/listings", listings);
