@@ -1,6 +1,5 @@
-if (process.env.NODE_ENV != "production") {
-    require('dotenv').config();
-}
+ require("dotenv").config();
+const PORT = process.env.PORT || 8080;
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
@@ -42,8 +41,8 @@ main().then(() => {
 async function main() {
     await mongoose.connect(dbURL);
 }
-app.listen(8080, () => {
-    console.log("Server is working");
+app.listen(PORT, () => {
+    console.log(`Server is working on port ${PORT}`);
 });
 
 const store = MongoStore.create({
